@@ -1,0 +1,74 @@
+<div class="header">
+    <div style="text-align: right;">
+        <a (click)="logout()">LogOut</a>
+    </div>
+    <div>
+        <h2>Hệ Thống Thông Tin Đào Tạo</h2>
+    </div>
+    <div *ngIf="studentdata">
+        <h4>{{ studentdata.username }} - {{ studentdata.id }}</h4>
+    </div>
+    <div style="text-align: right;">
+        <a [routerLink]="['/point']">bảng điểm</a>
+    </div>
+</div>
+<div class="profi" *ngIf="studentdata">
+    <p>{{ studentdata.id }} - {{ studentdata.username }} Lớp: {{ studentdata.className }} - Ngành {{
+        studentdata.departmentName }} - {{ studentdata.cohortName }}</p>
+    <h3>Đăng ký môn học </h3>
+    <h4 style="text-align: center;" *ngIf="hockydata">Học kỳ <p id="semester" style="display: inline;">
+            {{hockydata.semester}}</p> năm học <p id="termName" style="display: inline;">{{hockydata.termName}}</p>
+    </h4>
+</div>
+<div>
+    <span style="padding: 5px;">Chọn học phần</span>
+    <select name="hp" id="hp" style="padding-left: 10px; margin-right: 15px;" [(ngModel)]="selectedCourseId">
+        <option *ngFor="let course of courses" [value]="course.id">{{ course.courseName }}</option>
+    </select>
+    <button (click)="showCourseDetails()">hiển thị chi tiết môn học</button>
+</div>
+
+
+<div>
+    <table id="customers">
+        <thead>
+            <th>Mã học phần</th>
+            <th>Tên học phần</th>
+            <th>Số tín chỉ</th>
+            <th></th>
+        </thead>
+        <tbody *ngFor="let item of courseDetails">
+            <td>{{item.id}}</td>
+            <td>{{item.courseName}}</td>
+            <td>4</td>
+            <td> <input type="checkbox" [(ngModel)]="item.selected"></td>
+        </tbody>
+    </table>
+    <div style="text-align: right;">
+        <p>Ấn nút <button href="" style="color: red;" (click)="dkymon()">đăng ký</button> để hoàn hiện đăng ký môn học
+            đã chọn</p>
+    </div>
+</div>
+
+<div>
+    <h3 style="text-align: center;">Danh sách môn học đã đăng ký</h3>
+    <span style="padding: 5px;">Chọn kỳ học</span>
+    <select name="hp" id="hp" style="padding-left: 10px; margin-right: 15px;">
+
+    </select>
+    <button>hiển thị chi tiết môn học</button>
+    <table id="customers">
+        <thead>
+            <th>Mã học phần</th>
+            <th>Tên học phần</th>
+            <th>Số tín chỉ</th>
+            <th>Hủy học phần</th>
+        </thead>
+        <tbody *ngFor="let item of Coursedata">
+            <td>{{item.id}}</td>
+            <td>{{item.courseName}}</td>
+            <td>4</td>
+            <td><a style="color: red;" (click)="deletehp(item.id)">Hủy</a></td>
+        </tbody>
+    </table>
+</div>

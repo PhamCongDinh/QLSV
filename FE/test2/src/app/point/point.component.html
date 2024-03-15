@@ -1,0 +1,23 @@
+<p>point works!</p>
+<div>
+    <table id="customers">
+        <thead>
+            <th>Mã học phần</th>
+            <th>Tên học phần</th>
+            <th>Số tín chỉ</th>
+            <th>Điểm QT</th>
+            <th>Điểm thi</th>
+            <th>Điểm kết thúc</th>
+        </thead>
+        <tbody *ngFor="let item of Coursedata">
+            <td>{{item.id}}</td>
+            <td>{{item.courseName}}</td>
+            <td>4</td>
+            <td>{{item.pointProcess}}</td>
+            <td>{{item.pointTest}}</td>
+            <td>{{item.diemKT}}</td>
+
+        </tbody>
+    </table>
+
+</div>

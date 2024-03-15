@@ -1,0 +1,37 @@
+<section>
+    <div class="form-box">
+        <div class="form-value">
+            <form #formdata="ngForm" (ngSubmit)="register(formdata)">
+                <h2>Đăng ký</h2>
+                <div class="inputbox">
+                    <input type="text" name="id" ngModel required>
+                    <label for="">Mã sinh viên</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" name="studentname" ngModel required>
+                    <label for="">Họ tên</label>
+                </div>
+                <div class="inputbox">
+                    <input type="email" name="email" ngModel required>
+                    <label for="">Email</label>
+                </div>
+                <div class="inputbox">
+                    <input type="password" name="password" id="password" ngModel required>
+                    <label for="">Mật Khẩu</label>
+                </div>
+                <div class="inputbox">
+                    <input type="password" name="conficpass" id="conficpass" ngModel required>
+                    <label for="">Xác nhận mật Khẩu</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="classes" name="classes" ngModel required>
+                    <label for="">Lớp(Ex:CNTT1_K61)</label>
+                </div>
+                <button type="submit">Đăng ký</button>
+                <div class="register">
+                    <p>Đã có tài khoản <a [routerLink]="['']">Đăng nhập</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

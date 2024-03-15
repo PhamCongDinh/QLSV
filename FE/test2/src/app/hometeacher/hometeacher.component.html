@@ -1,0 +1,43 @@
+<div style="text-align: right;">
+    <a (click)="logout()">LogOut</a>
+</div>
+<div>
+    <span>Chọn mã học phần</span>
+    <select name="hp" id="hp" style="padding-left: 10px; margin-right: 15px;" [(ngModel)]="selected">
+        <option *ngFor="let course of coursesteach" [ngValue]="course.id">{{ course.id }}</option>
+    </select>
+    <button (click)="showstudent()">hiện sinh viên học phần đó</button>
+</div>
+<div>
+    <table id="customers">
+        <thead>
+            <tr>
+                <th>Mã học phần</th>
+                <th>Tên học phần</th>
+                <th>Mã sinh viên</th>
+                <th>Tên sinh viên</th>
+                <th>Lớp</th>
+                <th>Khóa</th>
+                <th>Điểm QT</th>
+                <th>Điểm thi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of studentDetails">
+                <td>{{item.id}}</td>
+                <td>{{item.courseName}}</td>
+                <td>{{item.studentid}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.classesName}}</td>
+                <td>{{item.cohortName}}</td>
+                <td>
+                    <input type="text" [(ngModel)]="item.pointProcess" style="border: none; width:100%">
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="item.pointTest" style="border: none; width:100%">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="submitScores()">gửi</button>
+</div>

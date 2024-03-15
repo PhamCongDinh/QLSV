@@ -1,0 +1,32 @@
+<section>
+    <div class="form-box" style="height: 550px;">
+        <div class="form-value">
+            <form #formdata="ngForm" (ngSubmit)="login(formdata)">
+                <h2>Đăng nhập</h2>
+
+                <div class="inputbox">
+                    <input type="text" id="id" name="id" ngModel required>
+                    <label for="">Mã Sinh Viên</label>
+                </div>
+                <div class="inputbox">
+                    <input type="password" id="password" name="password" ngModel required>
+                    <label for="">Mật Khẩu</label>
+                </div>
+
+
+                <div class="forget">
+                    <label for=""><a href="#">Quên mật khẩu</a></label>
+
+                </div>
+                <button type="submit" id="login">Đăng nhập</button>
+                <div class="register">
+                    <p>Chưa có tài khoản <a [routerLink]="['/Register']">Đăng ký</a></p>
+                </div>
+            </form>
+
+
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+        </div>
+    </div>
+</section>

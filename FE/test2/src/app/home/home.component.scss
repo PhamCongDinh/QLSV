@@ -1,0 +1,60 @@
+h2 {
+    color: #f6f1f1;
+    padding: 30px;
+}
+
+.header {
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    display: inline-block;
+}
+
+div {}
+
+h4 {
+    padding-top: 0;
+    text-align: right;
+}
+
+.profi {
+    text-align: center;
+
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: rgb(98, 98, 140);
+    transition: background-color 0.6s;
+}
