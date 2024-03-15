@@ -5,3 +5,4 @@
 - phía giảng viên:
   + đăng nhập
   + hiện các sinh viên theo học phần mà giảng viên dạy
+  + điền điểm quá trình và điểm thi cho các sinh viên
